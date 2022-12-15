@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -66,8 +67,12 @@ public class PlayerControllerNewTest : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 scaler = transform.localScale;
+
+        transform.Rotate(0f, 180f, 0f);
+
+        /*Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+        */
     }
 }

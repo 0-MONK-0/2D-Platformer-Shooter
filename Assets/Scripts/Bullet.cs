@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("Life timer")]
-    [SerializeField] private float aliveTimer = 1;
-    private void Update()
+    public float speed = 20f;
+    public Rigidbody2D rb;
+
+
+    private void Start()
     {
-        StartCoroutine(destroyTimer());
+        rb.velocity = transform.right * speed;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D HitInfo)
     {
-        if (col && !col.gameObject.name.Equals("Player"))
-        {
-            Destroy(gameObject);
-        }
+        Debug.Log(HitInfo.name);
+        
+     
+        
     }
 
-    private IEnumerator destroyTimer()
-    {
-        yield return new WaitForSeconds(aliveTimer);
-        Destroy(gameObject);
-    }
 }
