@@ -239,4 +239,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 8475791586346250178}
-  Ignore: {fileID: 8475791586346250179}
+  waitTime: 1.5
